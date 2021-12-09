@@ -1,7 +1,7 @@
 $(document).ready(()=>{
-    $("logo").click(()=>{
-        $("#hubHead span#logo").animate({
-            top: "0"
-        }, 100)
-    })
+    $('#logo').animate({
+        opacity:"1",
+        top:"0"
+    }, 500) 
 })
+
