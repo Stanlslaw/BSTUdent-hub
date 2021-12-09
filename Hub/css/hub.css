@@ -17,6 +17,7 @@
     width: fit-content;
     position: relative;
     top: -50px;
+    opacity: 0 ;
 }
 
 #mainContent {
