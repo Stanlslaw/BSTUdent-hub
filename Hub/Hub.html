@@ -7,19 +7,26 @@
     <title>Hub</title>
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="css/hub.css">
-    <script src="js/jQuery/jquery-3.6.0.js"></script>
-    <script src="js/jQuery/jquery-ui-1.13.0/jquery-ui.js"></script>
-    <script src="js/hub.js"></script>
 </head>
 <body>
     <header id="hubHead">
         <span id="logo">BSTUdent Hub</span>
     </header>
     <article id="mainContent">
-        
+        <nav id="moduleSlider">
+            <div id="module1" class="moduleElem focusModule"></div>
+            <div id="module2" class="moduleElem prevModule"></div>
+            <div id="module3" class="moduleElem nextModule"></div>
+            <div id="module4" class="moduleElem ghostModule"></div>
+            <div class="arrowBox" id="leftArrBox"><img src="src/arrowLeft.png" id="leftArrow" class="arrows"></div>
+            <div class="arrowBox" id="rightArrBox"><img src="src/arrowRight.png" id="rightArrow" class="arrows"></div>
+        </nav>
     </article>
     <footer id="hubFooter">
 
     </footer>
+    <script src="js/jQuery/jquery-3.6.0.js"></script>
+    <script src="js/jQuery/jquery-ui-1.13.0/jquery-ui.js"></script>
+    <script src="js/hub.js"></script>
 </body>
 </html>
