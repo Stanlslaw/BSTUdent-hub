@@ -80,6 +80,7 @@
     text-align: left;
     grid-row-start: 2;
     grid-row-end: 3;
+    white-space:nowrap;
 }
 
 #about #bio {
