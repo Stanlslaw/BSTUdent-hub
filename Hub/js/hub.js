@@ -7,9 +7,7 @@ $(document).ready(()=>{
 
     $("#leftArrBox").click(()=>{
         $(".focusModule").switchClass("focusModule", "nextModule", 500).css({transform:"rotateY(15deg)", transformOrigin: "left center"});
-        $(".prevModule").switchClass("prevModule","focusModule", 500).css({transform:"rotateY(0deg)", transformOrigin: "center center"}).dblclick(()=>{
-            $(".focusModule").addClass("openedModule","fast");
-        });
+        $(".prevModule").switchClass("prevModule","focusModule", 500).css({transform:"rotateY(0deg)", transformOrigin: "center center"});
         $(".nextModule").switchClass("nextModule","prevModule", 500).css({transform:"rotateY(-15deg)", transformOrigin: "right center"});
     })
 
@@ -19,7 +17,7 @@ $(document).ready(()=>{
         $(".nextModule").switchClass("nextModule","focusModule", 500).css({transform:"rotateY(0deg)", transformOrigin: "center center"});
     })
 
-    $(".moduleElem").dblclick(()=>{
+    $(".moduleElem").dblclick(openModule = function() {
         $(".focusModule").addClass("openedModule", "fast");
         $(".arrows, .arrowBox").css({display:"none"});
         setTimeout(() => {
@@ -32,7 +30,11 @@ $(document).ready(()=>{
     }).mouseout(()=>{
         $("#dblClickTip").css({top:"0", opacity:"0"})
     });
-    
 })
 
+let closeModule = function() {
+    $(".focusModule").switchClass("openedModule", "");
+    $(".arrows, .arrowBox").css({display:"block"});
+    $("#moduleControl").css({display:"none"});
+}
 

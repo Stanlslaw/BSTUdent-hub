@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary</title>
+    <link rel="favicon" href="logo.png"/>
+    <!--css/hub НЕ ИЗМЕНЯТЬ!!!-->
+    <link rel="stylesheet" href="css/hub.css">
+    <!--Таблицы стилей модуля(используется для всех модулей, при необходимости добавить свои стили отдельным файлом)-->
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <header id="hubHead">
+        <span id="logo"><a href="index.html">BSTUdent Hub</a></span>
+        <nav id="headNav">
+            <a href="#top">
+                <div class="navButton">
+                    <span class="navText">
+                        Главная
+                    </span>
+                </div>
+            </a>
+            <a href="#workspace">
+                <div class="navButton">
+                    <span class="navText">
+                        <!--НАЗВАНИЕ ПРОЕКТА ЗАПИСАТЬ ЗДЕСЬ!!!-->
+                        Проект
+                    </span>
+                </div>
+            </a>
+            <a href="#about">
+                <div class="navButton">
+                    <span class="navText">
+                        Об авторе
+                    </span>
+                </div>
+            </a>
+        </nav>
+    </header>
+    <div id="intro">
+        <span id="greetings">
+            Приветствие
+        </span>
+        <span id="introInfo">
+            Общая информация о модуле
+        </span>
+        <a href="#workspace">
+            <img id="expandArrow" src="src/arrowDown.png">
+        </a>
+    </div>
+    <article name="workspace" id="workspace" class="workspace">
+        <!--Место для размещения функционального модуля-->
+    </article>
+    <div id="about">
+        <span id="aboutHead">
+            Об авторе
+        </span>
+        <div id="authorImage">
+            <img src=""/>
+        </div>
+        <span id="authorName">Имя фамилия</span>
+        <!--При желании оставить здесь свои контакты-->
+        <p id="bio">
+            Заполнить информацией о себе любимом.
+        </p>
+    </div>
+    <footer id="hubFooter">
+        <a href="">
+            <div class="footNav">
+                <span class="navText">
+                    Документация проекта
+                </span>
+            </div>
+        </a>
+        <a href="https://github.com/Stanlslaw/BSTUdent-hub">
+            <div class="footNav">
+                <span class="navText">
+                    GitHub
+                </span>
+            </div>
+        </a>
+        <a href="https://www.belstu.by/">
+            <div class="footNav">
+                <span class="navText">
+                    БГТУ
+                </span>
+            </div>
+        </a>
+    </footer>
+    <!--js/hub НЕ ИЗМЕНЯТЬ, свои скрипты подключать-->
+    <script src="js/jQuery/jquery-3.6.0.js"></script>
+    <script src="js/jQuery/jquery-ui-1.13.0/jquery-ui.js"></script>
+    <script src="js/hub.js"></script>
+</body>
+</html>
