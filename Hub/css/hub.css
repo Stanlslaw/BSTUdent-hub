@@ -12,6 +12,15 @@
     flex-flow: row;
     position: fixed;
     z-index: 6;
+    transition: background-color linear 0.5s;
+}
+
+#hubHead.cardActive{
+    background-color: #202020;
+}
+
+#hubHead.cardActive span#logo a, #hubHead.cardActive #headNav a {
+    color: white;
 }
 
 html{
@@ -41,6 +50,7 @@ html{
 #logo a {
     color: black;
     text-decoration: none;
+    transition: color linear 0.5s;
 }
 
 #hubHead #headNav {
@@ -61,6 +71,7 @@ html{
     flex-shrink: 0;
     width: 150px;
     height: 80px;
+    opacity: 0;
 }
 
 #headNav a {
@@ -69,6 +80,7 @@ html{
     font-family: Roboto-thin;
     text-align: center;
     vertical-align:baseline;
+    transition: color linear 0.5s;
 }
 
 
@@ -86,15 +98,38 @@ html{
     background-color: #a66300;
 }
 
+#hubHead.cardActive .navButton:hover {
+    background-color: rgb(90, 90, 90);
+}
+
+#mainContent #greet {
+    position: absolute;
+    top: 90px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-family: Roboto-thin;
+    font-size: 40px;
+    opacity: 0;
+    transition: opacity linear 0.3s;
+    user-select: none;
+}
+
 #mainContent {
     background-color: #202020;
     height: 800px;
+    transition: background-color linear 0.5s;
+}
+
+#mainContent.cardActive{
+    background-color: rgb(255, 255, 255);
 }
 
 #hubFooter {
     background-color: #a66300;
     height: 60px;
     display: flex;
+
 }
 
 #hubFooter .footNav {
@@ -129,6 +164,10 @@ a {
     display: block;
     position: absolute;
     transition: transform ease-in 0.2s;
+}
+
+#mainContent.cardActive .moduleElem, #mainContent.cardActive .arrowBox, #mainContent.cardActive #expandArrow img{
+    visibility:hidden;
 }
 
 .moduleElem.focusModule {
@@ -190,6 +229,146 @@ a {
     height: 100%;
     position: absolute;
     z-index: 5;
+}
+
+#expandArrow {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: calc(50% - 40px);
+    top: 460px;
+}
+
+#expandArrow img {
+    width: 100%;
+}
+
+#cards{
+    width: 100%;
+    background-color: #202020;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px calc(100% - 45px);
+    grid-gap: 5px;
+    transition: background-color linear 0.5s;
+}
+
+#cards.cardActive {
+    background-color: white;
+}
+
+
+#cards #cardText {
+    color: white;
+    font-family: Roboto-thin;
+    font-size: 40px;
+    text-align: center;
+    transition: color linear 0.5s;
+}
+
+#cards #cardText.cardActive {
+    color: black;
+}
+
+#cardContain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#cardContain .cardElem {
+    background-color:rgb(90, 90, 90);
+    flex-basis: 400px;
+    flex-shrink: 0;
+    width: 400px;
+    height: 600px;
+    border: black 1px solid;
+    margin: 50px 20px;
+    transform: translate(0px, 200px);
+    opacity: 0;
+    transition: transform ease-out 0.5s, opacity ease-out 0.5s;
+    border-radius: 3px;
+}
+
+#cardContain .cardElem:hover {
+    transform: translate(0px, -50px);
+}
+
+#cardContain .cardElem.cardActive {
+    transform:  translate(0px, 0px);
+    opacity: 1;
+}
+
+#authors {
+    width: 100%;
+    height: 900px;
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    grid-template-rows: 100px 400px 400px;
+    justify-content: space-between;
+    color: black;
+    background-color: white;
+    transition: background-color linear 0.5s, color linear 0.5s;
+}
+
+#authors.authorActive {
+    background-color: #202020;
+    color: white;
+}
+
+#authors #authorsHead {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-family: Roboto-thin;
+    font-size: 40px;
+    text-align: center; 
+    color: black;
+    transition: color linear 0.5s;
+}
+
+#authors #authorsHead.authorActive {
+    color: white;
+}
+
+#authors .authorElem {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 200px 230px;
+    grid-template-rows: 200px 55px;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: transform ease-out 0.5s, opacity linear 0.5s;
+}
+
+#authors .authorElem.authorActive {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.authorElem img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.authorElem p {
+    font-family: Roboto-thin;
+    font-size: 16px;
+    padding: 8px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.authorElem span {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-family: Roboto-thin;
+    font-size: 20px;
+    text-align: center;
 }
 
 #moduleControl {
@@ -260,4 +439,8 @@ a {
 @font-face {
     font-family: Roboto-thin;
     src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+
+@media (max-width:480px) {
+    
 }
