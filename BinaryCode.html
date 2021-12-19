@@ -6,6 +6,7 @@
     <h1>Добро пожаловать на бесплатную платформу имени <span>Дмитрия Анатольевича</span> по работе с двоичным кодом</h1>
     <h5>Выберите операцию, которую вы хотите совершить</h5>
     <div>
+      <form>
       <select name="choise" id="choise">
        <option value="in">Перевод в двоичный код</option>
         <option value="out">Перевод из двоичного кода</option>
@@ -16,12 +17,14 @@
       </select>
     </div>
       <div>
-      <textarea name="firsttext" id="firsttext" cols="30" rows="1"></textarea>
-      <textarea name="secondtext" id="secondtext" cols="30" rows="1"></textarea>
+        <input type="text" name="firsttext" id="firsttext">
+        <input type="text" name="secondtext" id="secondtext">
     </div>
+    </form>
+    <button id="but">Вычислить</button>
     <div>
-      <p>Поле для ответа</p>
+      <p id="answer">Поле для ответа</p>
     </div>
-    <script src="BinaryCalculations.cpp"></script>
+    <script src="BinaryCalculations.js"></script>
   </body>
 </html>
