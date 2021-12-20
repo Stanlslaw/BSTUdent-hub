@@ -8,8 +8,12 @@
         .group1 {
             border: 5px solid red;
             width: 100%;
-            height: 720px;
+            height: 730px;
         
+        }
+        body {
+            overflow: auto;
+            background-color: #000000;
         }
         .head {
             width: 100%;
@@ -22,6 +26,7 @@
             float: left;
             margin-left: 50px;
             display: inline;
+
         }
         .logo2 {
             width: 150px;
@@ -53,131 +58,23 @@
         font-family:Tahoma, sans-serif;
         font-size:5px;
         z-index: 999; 
-        opacity: 0.7; 
+        opacity: 0.3; 
         margin-top: 15px;
 
         }
-
+        #clockHours, #clockMinutes, #clockSeconds {
+            width: 10px;
+            height: 15px;
+        }
+        .subjects:hover{
+            background-color: yellow;
+        }
         
 
     </style>
-    <script type="text/javascript">
-    function displayCanvas(){
-    var canvasHTML = document.getElementById('myCanvas');
-    var contextHTML = canvasHTML.getContext('2d');
-    contextHTML.strokeRect(0,0,canvasHTML.width, canvasHTML.height);
-            
-    //Расчет координат центра и радиуса часов
-    var radiusClock = canvasHTML.width/2 - 3;
-    var xCenterClock = canvasHTML.width/2;
-    var yCenterClock = canvasHTML.height/2;
-            
-    //Очистка экрана. 
-    contextHTML.fillStyle = "#ffffff";
-    contextHTML.fillRect(0,0,canvasHTML.width,canvasHTML.height);
-            
-    //Рисуем контур часов
-    contextHTML.strokeStyle = "#000000";
-    contextHTML.lineWidth = 0.5;
-    contextHTML.beginPath();
-    contextHTML.arc(xCenterClock, yCenterClock, radiusClock, 0, 2*Math.PI, true);
-    contextHTML.moveTo(xCenterClock, yCenterClock);
-    contextHTML.stroke();
-    contextHTML.closePath();
-            
-    //Рисуем рисочки часов
-    var radiusNum = radiusClock - 3;   //Радиус расположения рисочек   
-    var radiusPoint;
-    for(var tm = 0; tm < 60; tm++){
-        contextHTML.beginPath();
-        if(tm % 5 == 0){
-            radiusPoint = 2;
-        }
-        else{
-            radiusPoint = 1;
-        } //для выделения часовых рисочек
-        var xPointM = xCenterClock + radiusNum * Math.cos(-6*tm*(Math.PI/180) + Math.PI/2);
-        var yPointM = yCenterClock - radiusNum * Math.sin(-6*tm*(Math.PI/180) + Math.PI/2);
-        contextHTML.arc(xPointM, yPointM, radiusPoint, 0, 2*Math.PI, true);
-        contextHTML.stroke();
-        contextHTML.closePath();
-    } 
-            
-    //Оцифровка циферблата часов
-    for(var th = 1; th <= 12; th++){
-        contextHTML.beginPath();
-        contextHTML.font = 'bold 9px sans-serif';
-        var xText = xCenterClock + (radiusNum - 7.5) * Math.cos(-30*th*(Math.PI/180) + Math.PI/2);
-        var yText = yCenterClock - (radiusNum - 7.5) * Math.sin(-30*th*(Math.PI/180) + Math.PI/2);
-        if(th <= 9){
-            contextHTML.strokeText(th, xText - 2, yText + 3);
-        }else{
-            contextHTML.strokeText(th, xText - 4, yText + 3);
-        }
-            contextHTML.stroke();
-            contextHTML.closePath();    
-        }
-            
-    //Рисуем стрелки
-    var lengthSeconds = radiusNum - 3;
-    var lengthMinutes = radiusNum - 4;
-    var lengthHour = lengthMinutes / 2;
-    var d = new Date();   //Получаем экземпляр даты
-    var t_sec = 6*d.getSeconds();   //Определяем угол для секунд
-    var t_min = 6*(d.getMinutes() + (1/60)*d.getSeconds()); //Определяем угол для минут
-    var t_hour = 30*(d.getHours() + (1/60)*d.getMinutes()); //Определяем угол для часов
-            
-    //Рисуем секунды
-    contextHTML.beginPath();
-    contextHTML.strokeStyle =  "#FF0000";
-    contextHTML.moveTo(xCenterClock, yCenterClock);
-    contextHTML.lineTo(xCenterClock + lengthSeconds*Math.cos(Math.PI/2 - t_sec*(Math.PI/180)),
-        yCenterClock - lengthSeconds*Math.sin(Math.PI/2 - t_sec*(Math.PI/180)));
-    contextHTML.stroke();
-    contextHTML.closePath();
-        
-    //Рисуем минуты
-    contextHTML.beginPath();
-    contextHTML.strokeStyle =  "#000000";
-    contextHTML.lineWidth = 1;
-    contextHTML.moveTo(xCenterClock, yCenterClock);
-    contextHTML.lineTo(xCenterClock + lengthMinutes*Math.cos(Math.PI/2 - t_min*(Math.PI/180)),
-        yCenterClock - lengthMinutes*Math.sin(Math.PI/2 - t_min*(Math.PI/180)));
-    contextHTML.stroke();
-    contextHTML.closePath();
-        
-    //Рисуем часы
-    contextHTML.beginPath();
-    contextHTML.lineWidth = 1;
-    contextHTML.moveTo(xCenterClock, yCenterClock);
-    contextHTML.lineTo(xCenterClock + lengthHour*Math.cos(Math.PI/2 - t_hour*(Math.PI/180)),
-        yCenterClock - lengthHour*Math.sin(Math.PI/2 - t_hour*(Math.PI/180)));
-    contextHTML.stroke();
-    contextHTML.closePath();    
-            
-    //Рисуем центр часов
-    contextHTML.beginPath();
-    contextHTML.strokeStyle = "#000000";
-    contextHTML.fillStyle = "#ffffff";
-    contextHTML.lineWidth = 1;
-    contextHTML.arc(xCenterClock, yCenterClock, 1, 0, 2*Math.PI, true);
-    contextHTML.stroke();
-    contextHTML.fill();
-    contextHTML.closePath();
-              
-    return;
-}
-
-        
-window.setInterval(
-    function(){
-        
-        displayCanvas();
-    }
-    , 1000);
-
-    </script>
-    
+    <script src="clocks.js"></script>
+    <script src="digitalClocks.js"></script>
+    <script type="text/javascript"></script>
 </head>
 <body>
     
@@ -205,49 +102,49 @@ window.setInterval(
                     </th>
                 </tr>
                 <tr>
-                    <th><span>Время</span></th>
+                    <th><div><span id=clockHours></span>:<span id=clockMinutes></span>:<span id=clockSeconds></span></div></th>
                     <th align="center"><div>Понедельник</div></th>
-                    <th align="center"><span>Вторник</span></th>
-                    <th align="center"><span>Среда</span></th>
-                    <th align="center"><span>Четверг</span></th>
-                    <th align="center"><span>Пятница</span></th>
-                    <th align="center"><span>Суббота</span></th>
+                    <th align="center"><div>Вторник</div></th>
+                    <th align="center"><div>Среда</div></th>
+                    <th align="center"><div>Четверг</div></th>
+                    <th align="center"><div>Пятница</div></th>
+                    <th align="center"><div>Суббота</div></th>
                 </tr>
                 <tr>
-                    <td><b>14:40-16:00</b></td>
-                    <td align="center"><span>1.Матанализ<br>2.СЯП</span></td>
-                    <td align="center"><span>Английский язык</span></td>
-                    <td align="center"><span>АЛОЦВМ</span></td>
-                    <td align="center"><span>СЯП</span></td>
-                    <td align="center"><span>ОАП</span></td>
-                    <td align="center"><span>1.АЛОЦВМ<br>2.---</span></td>
+                    <th><div><b>14:40-16:00</b></div></th>
+                    <td class="subjects" align="center"><div class="choiceOfWeek">1.Матанализ<br>2.СЯП</div></td>
+                    <td class="subjects" align="center"><div>Английский язык</div></td>
+                    <td class="subjects" align="center"><div>АЛОЦВМ</div></td>
+                    <td class="subjects" align="center"><div>СЯП</div></td>
+                    <td class="subjects" align="center"><div>ОАП</div></td>
+                    <td class="subjects" align="center"><div class="choiceOfWeek">1.АЛОЦВМ<br>2.---</div></td>
                 </tr>
                 <tr>
-                    <td><b>16:30-17:50</b></td>
-                    <td align="center"><span>Технологии разработки ПО</span></td>
-                    <td align="center"><span>ОАП</span></td>
-                    <td align="center"><span>Физра</span></td>
-                    <td align="center"><span>Технологии разработки ПО</span></td>
-                    <td align="center"><span>Линейная алгебра</span></td>
-                    <td align="center"><span>Матанализ</span></td>
+                    <th><div><b>16:30-17:50</b></div></th>
+                    <td class="subjects" align="center"><div>Технологии разработки ПО</div></td>
+                    <td class="subjects" align="center"><div>ОАП</div></td>
+                    <td class="subjects" align="center"><div>Физра</div></td>
+                    <td class="subjects" align="center"><div>Технологии разработки ПО</div></td>
+                    <td class="subjects" align="center"><div>Линейная алгебра</div></td>
+                    <td class="subjects" align="center"><div>Матанализ</div></td>
                 </tr>
                 <tr>
-                    <td><b>18:05-19:25</b></td>
-                    <td align="center"><span></span></td>
-                    <td align="center"><span>Матанализ</span></td>
-                    <td align="center"><span>Линейная алгебра и аналитическая геометрия</span></td>
-                    <td align="center"><span>КЯР</span></td>
-                    <td align="center"><span>1.Матанализ<br>2.---</span></td>
-                    <td align="center"><span>Физра</span></td>
+                    <th><div><b>18:05-19:25</b></div></th>
+                    <td class="subjects" align="center"><div></div></td>
+                    <td class="subjects" align="center"><div>Матанализ</div></td>
+                    <td class="subjects" align="center"><div>Линейная алгебра и аналитическая геометрия</div></td>
+                    <td class="subjects" align="center"><div>КЯР</div></td>
+                    <td class="subjects" align="center"><div class="choiceOfWeek">1.Матанализ<br>2.---</div></td>
+                    <td class="subjects" align="center"><div>Физра</div></td>
                 </tr>
                 <tr>
-                    <td><b>19:40-21:00</b></td>
-                    <td align="center"><span></span></td>
-                    <td align="center"><span>1.ОАП<br>2.---</span></td>
-                    <td align="center"><span></span></td>
-                    <td align="center"><span></span></td>
-                    <td align="center"><span>1.История ВОВ<br>2.---</span></td>
-                    <td align="center"><span>КЯР</span></td>
+                    <th><div><b>19:40-21:00</b></div></th>
+                    <td class="subjects" align="center"><div></div></td>
+                    <td class="subjects" align="center"><div class="choiceOfWeek">1.ОАП<br>2.---</div></td>
+                    <td class="subjects" align="center"><div></div></td>
+                    <td class="subjects" align="center"><div></div></td>
+                    <td class="subjects" align="center"><div class="choiceOfWeek">1.История ВОВ<br>2.---</div></td>
+                    <td class="subjects" align="center"><div>КЯР</div></td>
                 </tr>
             </table>
         </div>
