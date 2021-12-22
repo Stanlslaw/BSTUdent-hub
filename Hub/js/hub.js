@@ -10,6 +10,7 @@ $(window).scroll(function() {
         let $authors = $(".authorElem");
         let $authCont = $("#authors");
         let $authHead = $('#authorsHead')
+        let $authAbout = $('.authAbout')
     let scroll = $window.scrollTop() + (3 * $window.height() / 4);
    
     $card.each(function() {
@@ -21,12 +22,14 @@ $(window).scroll(function() {
         $main.addClass("cardActive");
         $cardText.addClass("cardActive");
         $head.addClass("cardActive");
+        $authAbout.css({visibility:"hidden"})
       }
       else {
           $cardText.removeClass("cardActive");
           $main.removeClass("cardActive");
           $cardsCont.removeClass("cardActive");
           $head.removeClass("cardActive");
+          $authAbout.css({visibility:"visible"})
       }
     });
 
@@ -101,22 +104,22 @@ $(document).ready(()=>{
 
     $(".moduleElem").dblclick(openModule = function() {
         $(".focusModule").addClass("openedModule", "fast");
+        $(".focusModule .moduleDesc").addClass("opened", "fast");
+        $(".focusModule .authAbout").addClass("opened","fast")
         $(".arrows, .arrowBox").css({display:"none"});
         setTimeout(() => {
             $("#moduleControl").css({display:"block"})
         }, 200);
     });
     
-    $(".moduleElem").mouseenter(()=>{
-        $("#dblClickTip").css({top:"-20px", opacity:"1"})
-    }).mouseout(()=>{
-        $("#dblClickTip").css({top:"0", opacity:"0"})
-    });
+    
 })
 
 let closeModule = function() {
     $(".focusModule").switchClass("openedModule", "");
     $(".arrows, .arrowBox").css({display:"block"});
     $("#moduleControl").css({display:"none"});
+    $(".focusModule .moduleDesc").switchClass("opened", "")
+    $(".focusModule .authAbout").switchClass("opened","")
 }
 

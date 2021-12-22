@@ -79,20 +79,21 @@ html{
     color: black;
     font-family: Roboto-thin;
     text-align: center;
-    vertical-align:baseline;
     transition: color linear 0.5s;
 }
 
 
 #headNav .navButton span.navText {
+    display: inline-block;
     font-size: 25px;
-    position:relative;
+    position: relative;
 }
 
 .navButton a {
     width: 100%;
     height: 100%;
 }
+
 
 .navButton:hover {
     background-color: #a66300;
@@ -163,7 +164,12 @@ a {
     background-color: rgb(90, 90, 90);
     display: block;
     position: absolute;
-    transition: transform ease-in 0.2s;
+    transition: transform ease-in 0.2s,
+    transform-origin linear 0.2s;
+    display: grid;
+    grid-template-columns: calc(2*100%/3) calc(100%/3);
+    grid-template-rows: 20% 80%;
+    border-radius: 4px;
 }
 
 #mainContent.cardActive .moduleElem, #mainContent.cardActive .arrowBox, #mainContent.cardActive #expandArrow img{
@@ -175,18 +181,130 @@ a {
     z-index: 3;
     opacity: 1;
     transform:scale(1);
+    background:rgb(90, 90, 90);
+
 }
 
-#dblClickTip{
-    position: absolute;
-    left: calc(50% - 300px);
-    width: 600px;
-    text-align: center;
-    color: white;
-    transition: top ease-in 0.2s, opacity ease-in 0.1s;
+.moduleElem div.authCont {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 10%;
+    transform: translateY(20px);
     opacity: 0;
-    font-size: 12px;
-    font-family: "Roboto";
+    transition: transform 0.2s linear,
+    opacity 0.2s linear;
+}
+
+.authCont .authName {
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    font-family: Roboto-thin;
+    text-align: center;
+    user-select: none;
+    color: white;
+    text-shadow: black 2px 2px 6px;
+}
+
+.moduleElem .moduleName {
+    color: white;
+    text-shadow: black 0px 0px 6px ;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 70px;
+    text-align: center;
+    font-family: Roboto;
+    transform: translateY(160px);
+    transition: transform 0.2s ease-in;
+    z-index: 5;
+    user-select: none;
+}
+
+.moduleElem .authCont .authAbout {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+    color: white;
+    font-family: Roboto-thin;
+    text-shadow: black 2px 2px 6px;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+.moduleElem.moduleElem .authCont .authAbout.opened{
+    visibility: visible;
+    opacity: 1;
+}
+
+.moduleElem .moduleDesc {
+    margin: 5%;
+    transition: font-size 0.2s linear,
+    opacity 0.2s linear,
+    transform 0.2s linear;
+    opacity: 0;
+    transform: translateY(20px);
+    user-select: none;
+    padding: 5%;
+    color: white;
+    font-family: Roboto-thin;
+    font-size: 16px;
+    text-shadow: black 2px 2px 6px;
+}
+
+.moduleDesc .toMod {
+    color: rgb(255, 153, 0);
+}
+
+.moduleDesc .toMod:hover {
+    color: #a66300;
+}
+
+.moduleElem.openedModule .moduleDesc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.moduleElem.openedModule .authCont {
+    opacity: 1;
+    transform: translateY(0);
+    user-select: none;
+    pointer-events: none;
+
+}
+
+.authCont {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.authCont img {
+    height: 160px;
+    flex-grow: 0;
+    border-radius: 4px;
+}
+
+
+.focusModule .moduleDesc.opened {
+    font-size: 25px;
+}
+
+.moduleElem.focusModule:hover .moduleName{
+    transform: translateY(0);
+}
+
+.moduleElem.focusModule:hover .moduleDesc{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.moduleElem.focusModule:hover .authCont {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .moduleElem.openedModule {
@@ -196,6 +314,10 @@ a {
     width: 100%;
     height: 800px;
     background-color: #202020;
+}
+
+.moduleElem.openedModule .moduleName {
+    transform: translateY(0);
 }
 
 .moduleElem.nextModule {
@@ -292,8 +414,9 @@ a {
     border-radius: 3px;
 }
 
-#cardContain .cardElem:hover {
-    transform: translate(0px, -50px);
+#cardContain .cardElem.cardActive:hover {
+    transform: translate(0px, -10px);
+    box-shadow: rgb(255, 153, 0) 0px 2px 10px 0px;
 }
 
 #cardContain .cardElem.cardActive {
@@ -442,5 +565,7 @@ a {
 }
 
 @media (max-width:480px) {
-    
+    #hubHead {
+        display: block;
+    }
 }
