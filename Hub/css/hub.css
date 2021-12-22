@@ -23,6 +23,22 @@
     color: white;
 }
 
+#hubHead #secret {
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    color: transparent;
+    font-size: 20px;
+    user-select: none;
+}
+
+#hubHead #secret:hover {
+    color: black;
+}
+
+
+
 html{
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -215,9 +231,15 @@ a {
     text-align: center;
     font-family: Roboto;
     transform: translateY(160px);
-    transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in,
+    opacity 0.1s ease-in;
     z-index: 5;
     user-select: none;
+    opacity: 1;
+}
+
+.moduleElem.openedModule .moduleName{
+    opacity: 0;
 }
 
 .moduleElem .authCont .authAbout {
