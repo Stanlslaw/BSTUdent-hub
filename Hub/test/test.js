@@ -35,10 +35,10 @@ function snakeGrow() {
  
     gr+=1;
     setTimeout(()=>{
-        document.getElementById("field").innerHTML += `<div style='background-color:rgb(0, ${gr},0),' class='snakeBody'></div>`;
+        document.getElementById("field").innerHTML += `<div style='background-color:rgb(0, ${gr},0)' class='snakeBody'></div>`;
     }, 0)
-    snakeBody[snakeBody.length - 1].style.top = snakeBody[snakeBody.length - 2].style.top;
-    snakeBody[snakeBody.length - 1].style.left = snakeBody[snakeBody.length - 2].style.left;
+    snakeBody[snake.length - 1].style.top = snakeBody[snake.length - 2].style.top;
+    snakeBody[snake.length - 1].style.left = snakeBody[snake.length - 2].style.left;
     if(snake.length == 81){
         setWin();
     }
