@@ -253,6 +253,7 @@ a {
     text-shadow: black 2px 2px 6px;
     user-select: none;
     pointer-events: none;
+    font-style: italic;
 }
 
 
@@ -433,6 +434,33 @@ a {
     opacity: 0;
     transition: transform ease-out 0.5s, opacity ease-out 0.5s;
     border-radius: 3px;
+}
+
+.cardElem .cardText {
+    width: 100%;
+    color: white;
+    font-family: Roboto;
+    font-size: 60px;
+    text-shadow: black 0px 0px 6px;
+    top: calc(50% - 30px);
+    position: absolute;
+    text-align: center;
+}
+
+.cardElem#card3{
+    background-image: url(../src/flappy_bird_bg.png);
+    background-size: 100%;
+}
+
+.cardElem#card2 {
+    background-image: url(../src/ttable.png);
+    background-position: top;
+    background-size:125%;
+}
+
+.cardElem#card1 {
+    background-image: url(../src/binary.jpg);
+    background-size:230%;
 }
 
 #cardContain .cardElem.cardActive:hover {
