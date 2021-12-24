@@ -69,26 +69,146 @@
         .subjects:hover{
             background-color: yellow;
         }
+        .subjects{
+            text-align: center;
+        }
         
 
     </style>
+    <style>
+        .main {
+    margin: 200px 50px 0 50px;
+}
+
+.tooltip {
+    position: relative;
+    background: #eaeaea;
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+
+
+}
+
+    .tooltip span {
+        visibility: hidden;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        z-index: 999;
+        width: 230px;
+        margin-left: -127px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        opacity: 0.9;
+        background-color: #ddd;
+        background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+        text-shadow: 0 1px 0 rgba(255,255,255,.4);
+    }
+    .tooltip span .tchaikovski {
+        margin-right: 50px;
+    }
+
+ 
+
+        .tooltip:hover span {
+            visibility: visible;
+        }
+
+    .tooltip span:before,
+    .tooltip span:after {
+        content: "";
+        position: absolute;
+        z-index: 1000;
+        bottom: 186px;
+        left: 50%;
+        margin-left: -5px;
+        border-top: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #ddd;
+
+    }
+    
+    .tooltip span:before {
+        border-top-color: #ccc;
+        bottom: 9px;
+    }
+    .sider {
+        margin-right: 150px;
+    }
+.blue-tooltip span {
+
+    border-color: #59add4;
+    background-color: #61bde7;
+}
+
+    .blue-tooltip span:after {
+        border-bottom-color: #61bde7;
+
+    }
+
+    .blue-tooltip span:before {
+        border-bottom-color: #59add4;
+        display: none;
+    }
+    .narkevich, .beloded, .homuk, .kapura, .tchaikovski{
+        width:  85px;
+        height: 100px;
+        float: right;
+
+    }
+
+        .narkevichInfo, .belodedInfo, .homukInfo, .kapuraInfo, .tchaikovskiInfo {
+            text-align: left;
+            color: black;
+        }
+b {
+    display: block;
+    margin-bottom: -100px;
+    font-weight: normal;
+
+}
+
+.fixator {
+    margin-top: -9%;
+}
+    </style>
+    <script type="text/javascript" src="C:\Users\HP\Desktop\jQuery.js"></script>
     <script src="clocks.js"></script>
     <script src="digitalClocks.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+            $(document).ready(function(){
+            $("#subjects1").mouseover(function(){
+                $("#subjects1").css("color","rgba(0,255,0,1)")
+            });
+        });
+            $(document).ready(function(){
+            $("#subjects1").mouseout(function(){
+                $("#subjects1").css("color","blue")
+            });
+        });
+           
+
+
+
+    </script>
 </head>
 <body>
     
     <div class="group1">
         <div class="head">
             
-                <img  class="logo1" src="logo.png">
+                <img  class="logo1" src="pic/logo.png">
             
             <div id="myCanvasDiv">
                 <canvas id="myCanvas" height='150' width='150'>
                 </canvas>
             </div>
             
-                <img  class="logo2" src="logo.png">
+                <img  class="logo2" src="pic/logo.png">
             
         </div>
         <div class="timetableDiv">
@@ -111,40 +231,88 @@
                     <th align="center"><div>Суббота</div></th>
                 </tr>
                 <tr>
-                    <th><div><b>14:40-16:00</b></div></th>
-                    <td class="subjects" align="center"><div class="choiceOfWeek">1.Матанализ<br>2.СЯП</div></td>
-                    <td class="subjects" align="center"><div>Английский язык</div></td>
-                    <td class="subjects" align="center"><div>АЛОЦВМ</div></td>
-                    <td class="subjects" align="center"><div>СЯП</div></td>
-                    <td class="subjects" align="center"><div>ОАП</div></td>
-                    <td class="subjects" align="center"><div class="choiceOfWeek">1.АЛОЦВМ<br>2.---</div></td>
+                    <th><div class="fixator"><b>14:40-16:00</b></div></th>
+                    <td class="subjects" id="subjects1"><div class="choiceOfWeek">1.Матанализ<br>2.СЯП</div></td>
+                    <td class="subjects" id="subjects2"><div>Английский язык</div></td>
+                    <td class="subjects" id="subjects3"><div>АЛОЦВМ</div></td>
+                    <td class="subjects"><div>СЯП</div></td>
+                    <td class="subjects"><div>ОАП</div></td>
+                    <td class="subjects"><div class="choiceOfWeek">1.АЛОЦВМ<br>2.---</div></td>
                 </tr>
                 <tr>
-                    <th><div><b>16:30-17:50</b></div></th>
-                    <td class="subjects" align="center"><div>Технологии разработки ПО</div></td>
-                    <td class="subjects" align="center"><div>ОАП</div></td>
-                    <td class="subjects" align="center"><div>Физра</div></td>
-                    <td class="subjects" align="center"><div>Технологии разработки ПО</div></td>
-                    <td class="subjects" align="center"><div>Линейная алгебра</div></td>
-                    <td class="subjects" align="center"><div>Матанализ</div></td>
+                    <th><div class="fixator"><b>16:30-17:50</b></div></th>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Технология разработки ПО<br>л-р каб. 206-1</b>
+                            <span>
+                                <b class="narkevichInfo">Старший преподаватель:<br>Наркевич А.C<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>+375 17 327-43-76<br>Email:<br>narkevich.<br>adelina@gmail.com</b>
+                                <img class="narkevich" src="pic/narkevich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">ОАП<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="belodedInfo">Доцент:<br>Белодед Н.И<br>Итоговая форма<br>контроля<br>знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>beloded@yandex.ru</b>
+                                <img class="beloded" src="pic/beloded.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Физра<br>спортивный комплекс, каб. 15</b>
+                            <span>
+                                <b class="homukInfo">Преподаватель:<br>Хомук О.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> 8 (017) 289 14 26<br>Email:<br>fvis@belstu.by</b>
+                                <img class="homuk" src="pic/homuk.png" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Технология разработки ПО<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="narkevichInfo">Старший преподаватель:<br>Наркевич А.C<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>+375 17 327-43-76<br>Email:<br>narkevich.<br>adelina@gmail.com</b>
+                                <img class="narkevich" src="pic/narkevich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Линейная алгебра<br>пз каб. 358-4</b>
+                            <span>
+                                <b class="kapuraInfo">Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by</b>
+                                <img class="kapura" src="pic/kapura.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Матанализ<br>лк ауд. 100-3а</b>
+                            <span>
+                                <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
+                                <img class="tchaikovski" src="pic/tchaikovski.jfif" />
+                            </span>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
-                    <th><div><b>18:05-19:25</b></div></th>
-                    <td class="subjects" align="center"><div></div></td>
-                    <td class="subjects" align="center"><div>Матанализ</div></td>
-                    <td class="subjects" align="center"><div>Линейная алгебра и аналитическая геометрия</div></td>
-                    <td class="subjects" align="center"><div>КЯР</div></td>
-                    <td class="subjects" align="center"><div class="choiceOfWeek">1.Матанализ<br>2.---</div></td>
-                    <td class="subjects" align="center"><div>Физра</div></td>
+                    <th><div class="fixator"><b>18:05-19:25</b></div></th>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects"><div>Матанализ</div></td>
+                    <td class="subjects"><div>Линейная алгебра и аналитическая геометрия</div></td>
+                    <td class="subjects"><div>КЯР</div></td>
+                    <td class="subjects"><div class="choiceOfWeek">1.Матанализ<br>2.---</div></td>
+                    <td class="subjects"><div>Физра</div></td>
                 </tr>
                 <tr>
-                    <th><div><b>19:40-21:00</b></div></th>
-                    <td class="subjects" align="center"><div></div></td>
-                    <td class="subjects" align="center"><div class="choiceOfWeek">1.ОАП<br>2.---</div></td>
-                    <td class="subjects" align="center"><div></div></td>
-                    <td class="subjects" align="center"><div></div></td>
-                    <td class="subjects" align="center"><div class="choiceOfWeek">1.История ВОВ<br>2.---</div></td>
-                    <td class="subjects" align="center"><div>КЯР</div></td>
+                    <th><div class="fixator"><b>19:40-21:00</b></div></th>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects"><div class="choiceOfWeek">1.ОАП<br>2.---</div></td>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects"><div class="choiceOfWeek">1.История ВОВ<br>2.---</div></td>
+                    <td class="subjects"><div>КЯР</div></td>
                 </tr>
             </table>
         </div>
