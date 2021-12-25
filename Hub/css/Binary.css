@@ -1,0 +1,83 @@
+#secondtext {
+  display: none;
+}
+#choise {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: rgb(231, 10, 10);
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 50%;
+  max-width: 80%;
+  box-sizing: border-box;
+  border: 1px solid rgb(10, 10, 10);
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  background-color: rgb(8, 217, 245);
+}
+.hello {
+  text-align: center;
+  width: 100%;
+  background-color: #7fff00;
+  padding: 10px;
+}
+.text {
+  width: 300px;
+  font-size: 13px;
+  padding: 6px 0 4px 10px;
+  border: 1px solid #0c08f5;
+  background: #a5ecf5;
+  border-radius: 8px;
+  color: rgb(255, 60, 0);
+  text-align: center;
+}
+.texts {
+  text-align: center;
+  margin: 10px;
+}
+.submit {
+  cursor: pointer;
+  border: 1px solid #f8ab05;
+  background: #fd9a05;
+  box-shadow: inset 0px 20px 20px #af7223;
+  border-radius: 8px;
+  padding: 8px 14px;
+  width: 120px;
+}
+.submit:hover {
+  box-shadow: inset 0px -20px 20px hsl(19, 94%, 48%);
+}
+.submit:active {
+  margin-top: 1px;
+  margin-bottom: -1px;
+  zoom: 1;
+}
+.submit:focus {
+  outline: none;
+}
+.but {
+  text-align: center;
+}
+.answer {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin: 10px auto;
+  background-color: black;
+  border-radius: 20px;
+  border: 5px solid #f8ab05;
+  width: 50%;
+}
+#alarm {
+  width: 70%;
+  margin: 10px auto;
+  background-color: #b8e0e7;
+  border: 1px solid #646463;
+  border-radius: 8px;
+}
