@@ -66,6 +66,12 @@ function outbi() {
       "<img src='src/error.png' style='vertical-align: middle;'>Извините, мы не работаем с отрицательными числами";
     return;
   }
+  for (let i = 0; i < document.forms[0].firsttext.value.length; i++)
+    if (document.forms[0].firsttext.value[i] == ".") {
+      answer.innerHTML =
+        "<img src='src/error.png' style='vertical-align: middle;'>Извините, мы не работаем с дробными числлами";
+      return;
+    }
   for (let i = 0; i < num.toString().length; i++)
     if (
       Math.round(num / Math.pow(10, i)) % 10 != 0 &&
@@ -103,6 +109,18 @@ function mathacts() {
   if (num1.toString().length > num2.toString().length)
     max = num1.toString().length;
   else max = num2.toString().length;
+  for (let i = 0; i < max; i++) {
+    if (document.forms[0].firsttext.value[i] == ".") {
+      answer.innerHTML =
+        "<img src='src/error.png' style='vertical-align: middle;'>Извините, мы не работаем с дробными числлами";
+      return;
+    }
+    if (document.forms[0].secondtext.value[i] == ".") {
+      answer.innerHTML =
+        "<img src='src/error.png' style='vertical-align: middle;'>Извините, мы не работаем с дробными числлами";
+      return;
+    }
+  }
   for (let i = 0; i < max; i++)
     if (
       (Math.round(num1 / Math.pow(10, i)) % 10 != 0 &&
