@@ -88,6 +88,9 @@
             text-align: left;
             color: black;
         }
+    #chai {
+       margin-right: 5px;
+    }
 b {
     display: block;
     margin-bottom: -90px;

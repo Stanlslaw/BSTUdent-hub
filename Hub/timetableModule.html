@@ -14,26 +14,60 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/tooltip.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <style type="text/css">
+        #displayer, #displayerOap, #displayerMath, #displayerStory, #displayerAlo {
+            display: none;
+        }
+    </style>
+    <script src="js/jQuery.js"></script>
     <script src="js/clocks.js"></script>
     <script src="js/digitalClocks.js"></script>
     <script src="js/tracker.js"></script>
     <script src="js/menu.js"></script>
     <script>
+
         function firstweek() {
-            document.getElementById("mathOrScrChoice").innerHTML = '1.Матанализ<br>лк ауд.100-3а';
-            document.getElementById("alotsvmOrNothChoice").innerHTML = '1.АЛОЦВМ<br>пз каб.308-3';
-            document.getElementById("mathanalOrNothChoice").innerHTML = '1.Матанализ<br>пз каб.331-4';
-            document.getElementById("oapOrNothChoice").innerHTML = '1.ОАП<br>лр каб.200а-4';
-            document.getElementById("vovOrNothChoice").innerHTML = '1.История ВОВ<br>лк ауд.200-3а';
+            document.getElementById("mathOrScrChoice").innerHTML = 'Матанализ<br>лк ауд. 100-3а';
+            document.getElementById("mathOrScrChoiceInser").innerHTML = 'Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by';
+            document.querySelector('#displayer').style.display = 'block';
+            document.querySelector('#displayerOap').style.display = 'block';
+            document.querySelector('#displayerMath').style.display = 'block';
+            document.querySelector('#displayerStory').style.display = 'block';
+            document.querySelector('#displayerAlo').style.display = 'block';
+            let tea = document.getElementById("chai");
+            chai.src = "pic/tchaikovski.jfif";
+            document.getElementById("oapOrNothChoice").innerHTML = 'ОАП<br>л-р каб. 200а-4';
+            document.getElementById("oapOrNothChoiceInser").innerHTML = 'Преподаватель-стажёр:<br>Чистякова Ю.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br> + 375-17-327-43-76<br>Email:<br>-----------<br>---------';
+            document.getElementById("mathOrNothChoice").innerHTML = 'Матанализ<br>пз каб. 358-4';
+            document.getElementById("mathOrNothChoiceInser").innerHTML = 'Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by';
+            document.getElementById("storyOrNothChoice").innerHTML = 'История Беларуси<br>лк ауд. 200-3а';
+            document.getElementById("storyOrNothChoiceInser").innerHTML = 'Доцент:<br>Андорало И.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----';
+            document.getElementById("aloOrNothChoice").innerHTML = 'АЛОЦВМ<br>пз каб. 308-3';
+            document.getElementById("aloOrNothChoiceInser").innerHTML = 'Доцент:<br>Гринюк Д.А<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>-----------------<br>OK.RU:<br>Дмитрий<br>Анатольевич';
+
+            
+
+           
+
+            
             flag = true;
 
         }
         function secondweek() {
-            document.getElementById("mathOrScrChoice").innerHTML = '2.СЯП<br>лк ауд.200-3а';
-            document.getElementById("alotsvmOrNothChoice").innerHTML = '2.---';
-            document.getElementById("mathanalOrNothChoice").innerHTML = '2.---';
-            document.getElementById("oapOrNothChoice").innerHTML = '2.---';
-            document.getElementById("vovOrNothChoice").innerHTML = '2.---';
+            document.getElementById("mathOrScrChoice").innerHTML = 'Скриптовые языки программирования<br>лк ауд. 200-3а';
+            document.getElementById("mathOrScrChoiceInser").innerHTML = 'Доцент:<br>Жиляк Н.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>+375-17 327-43-76<br>Email:<br>Ghilyak<br>@belstu.by';
+            document.querySelector('#displayer').style.display = 'block';
+            document.querySelector('#displayerOap').style.display = 'none';
+            document.querySelector('#displayerMath').style.display = 'none';
+            document.querySelector('#displayerStory').style.display = 'none';
+            document.querySelector('#displayerAlo').style.display = 'none';
+            chai.src = "pic/zhilyak.jfif";
+            document.getElementById("mathOrNothChoice").innerHTML = '---';
+            document.getElementById("storyOrNothChoice").innerHTML = '---';
+            document.getElementById("aloOrNothChoice").innerHTML = '---';
+            
+            document.getElementById("oapOrNothChoice").innerHTML = '---';
+
             flag = false;
         }
     </script>
@@ -74,7 +108,7 @@
             В этом проекте я представляю модуль "Динамическое расписание", который позволит студентам лучше совмещать по времени занятия и досуг.
         </span>
         <a href="#workspace">
-            <img id="expandArrow" src="src/arrowDown.png">
+            <img id="expandArrow" src="pic/arrowDown.png">
         </a>
     </div>
     <article name="workspace" id="workspace" class="workspace">
@@ -122,12 +156,12 @@
                     <tr>
                         <th><div class="fixator"><b>14:40-16:00</b></div></th>
                         <td class="subjects" id="mathOrScr">
-                            <div id="mathOrScrChoice">
+                            <div>
                                 <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                    <b style="color: blue;">Выберите неделю</b>
-                                    <span>
-                                        <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
-                                        <img class="tchaikovski" src="pic/tchaikovski.jfif" />
+                                    <b style="color: blue;" id="mathOrScrChoice">Выберите неделю</b>
+                                    <span id="displayer">
+                                        <b class="tchaikovskiInfo" id="mathOrScrChoiceInser"></b>
+                                        <img id="chai" class="tchaikovski" src="pic/tchaikovski.jfif" />
                                     </span>
                                 </a>
                             </div>
@@ -169,11 +203,11 @@
                             </a>
                         </td>
                         <td class="subjects" id="alotsvmPz">
-                            <div id="alotsvmOrNothChoice">
+                            <div>
                                 <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                    <b style="color: blue;">Выберите неделю</b>
-                                    <span>
-                                        <b class="grinyukInfo">Доцент:<br>Гринюк Д.А<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>-----------------<br>OK.RU:<br>Дмитрий<br>Анатольевич</b>
+                                    <b style="color: blue;" id="aloOrNothChoice">Выберите неделю</b>
+                                    <span id="displayerAlo">
+                                        <b class="grinyukInfo" id="aloOrNothChoiceInser"></b>
                                         <img class="grinyuk" src="pic/grinyuk.jfif" />
                                     </span>
                                 </a>
@@ -268,11 +302,11 @@
                             </a>
                         </td>
                         <td class="subjects" id="mathanalPz">
-                            <div id="mathanalOrNothChoice">
+                            <div>
                                 <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                    <b style="color: blue;">Выберите неделю</b>
-                                    <span>
-                                        <b class="kapuraInfo">Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by</b>
+                                    <b style="color: blue;" id="mathOrNothChoice">Выберите неделю</b>
+                                    <span id="displayerMath">
+                                        <b class="kapuraInfo" id="mathOrNothChoiceInser"></b>
                                         <img class="kapura" src="pic/kapura.jpg" />
                                     </span>
                                 </a>
@@ -293,11 +327,11 @@
                         <td class="subjects"><div></div></td>
                         <td class="subjects">
 
-                            <div id="oapOrNothChoice">
+                            <div>
                                 <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                    <b style="color: blue;">Выберите неделю</b>
-                                    <span>
-                                        <b class="chistyakovaInfo">Преподаватель-стажёр:<br>Чистякова Ю.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----</b>
+                                    <b style="color: blue;" id="oapOrNothChoice">Введите неделю</b>
+                                    <span id ="displayerOap">
+                                        <b class="chistyakovaInfo" id="oapOrNothChoiceInser"></b>
                                         <img class="chistyakova" src="pic/chistyakova.jpg" />
                                     </span>
                                 </a>
@@ -308,11 +342,11 @@
                         <td class="subjects"><div></div></td>
                         <td class="subjects">
 
-                            <div id="vovOrNothChoice">
+                            <div>
                                 <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                    <b style="color: blue;">Выберите неделю</b>
-                                    <span>
-                                        <b class="andoraloInfo">Доцент:<br>Андорало И.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----</b>
+                                    <b style="color: blue;" id="storyOrNothChoice">Выберите неделю</b>
+                                    <span id="displayerStory">
+                                        <b class="andoraloInfo" id="storyOrNothChoiceInser"></b>
                                         <img class="andoralo" src="pic/andoralo.jpg" />
                                     </span>
                                 </a>

@@ -3,25 +3,23 @@
 
 
 .logo2 {
-    
-    width: 190px;
+    text-decoration: none;
+    width: 150px;
+    margin-top: 70px;
+}
 
-}
-div.logo2{
-    width: 190px;
-}
 /* Important stuff */
 
 nav {
     position: relative;
-    width: 190px;
+    width: 90px;
+
 }
 
 .dropdown-toggle {
     padding: .5em 1em;
     background: #777;
-    border-radius: .2em .2em 0 0;
-    width: 190px;
+    border-radius: .2em .2em .2em .2em;
 }
 
 ul.dropdown {
@@ -30,20 +28,20 @@ ul.dropdown {
     top: 100%;
     margin-top: .5em;
     background: #777;
-    min-width: 12em;
+    min-width: 8em;
     padding: 0;
-    border-radius: 0 0 .2em .2em;
-
+    border-radius: .2em .2em .2em .2em;
 }
 
 li {
-    
-    width: 150px;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    padding-top: 7px;
 }
 
 .logo2 {
-    
+    text-decoration: none;
     padding: .5em 1em;
     display: block;
-
 }
