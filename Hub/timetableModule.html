@@ -42,7 +42,7 @@
             document.getElementById("mathOrNothChoiceInser").innerHTML = 'Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by';
             document.getElementById("storyOrNothChoice").innerHTML = 'История Беларуси<br>лк ауд. 200-3а';
             document.getElementById("storyOrNothChoiceInser").innerHTML = 'Доцент:<br>Андорало И.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----';
-            document.getElementById("aloOrNothChoice").innerHTML = 'АЛОЦВМ<br>пз каб. 308-3';
+            document.getElementById("aloOrNothChoice").innerHTML = 'АЛОЦВМ(9.35-10.55)<br>пз каб. 308-3';
             document.getElementById("aloOrNothChoiceInser").innerHTML = 'Доцент:<br>Гринюк Д.А<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>-----------------<br>OK.RU:<br>Дмитрий<br>Анатольевич';
 
             
@@ -62,11 +62,11 @@
             document.querySelector('#displayerStory').style.display = 'none';
             document.querySelector('#displayerAlo').style.display = 'none';
             chai.src = "pic/zhilyak.jfif";
-            document.getElementById("mathOrNothChoice").innerHTML = '---';
-            document.getElementById("storyOrNothChoice").innerHTML = '---';
-            document.getElementById("aloOrNothChoice").innerHTML = '---';
+            document.getElementById("mathOrNothChoice").innerHTML = '';
+            document.getElementById("storyOrNothChoice").innerHTML = '';
+            document.getElementById("aloOrNothChoice").innerHTML = '';
             
-            document.getElementById("oapOrNothChoice").innerHTML = '---';
+            document.getElementById("oapOrNothChoice").innerHTML = '';
 
             flag = false;
         }
@@ -102,7 +102,7 @@
     </header>
     <div id="intro">
         <span id="greetings">
-            Здраствуйте, меня зовут Никон, я начинающий веб-разработчик. 
+            Здраствуйте, меня зовут Никон 
         </span>
         <span id="introInfo">
             В этом проекте я представляю модуль "Динамическое расписание", который позволит студентам лучше совмещать по времени занятия и досуг.
@@ -166,14 +166,8 @@
                                 </a>
                             </div>
                         </td>
-                        <td class="subjects" id="anglPz">
-                            <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                <b style="color: blue;">Английский язык<br>пз каб. 121-2 общ.</b>
-                                <span>
-                                    <b class="krivonosovaInfo">Старший преподаватель:<br>Кривоносова Е.В<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>-----------------<br>Email:<br>krivonosova<br>@belstu.by</b>
-                                    <img class="krivonosova" src="pic/krivonosova.jpg" />
-                                </span>
-                            </a>
+                        <td class="subjects">
+                            <div></div>
                         </td>
                         <td class="subjects" id="alotsvmLk">
                             <a style="color: yellow" href="#" class="tooltip blue-tooltip">
@@ -263,7 +257,7 @@
                         </td>
                         <td class="subjects" id="mathanalLk">
                             <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                <b style="color: blue;">Матанализ<br>лк ауд. 100-3а</b>
+                                <b style="color: blue;">Матанализ(11.25-12.45)<br>лк ауд. 100-3а</b>
                                 <span>
                                     <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
                                     <img class="tchaikovski" src="pic/tchaikovski.jfif" />
@@ -314,7 +308,7 @@
                         </td>
                         <td class="subjects" id="pe2">
                             <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                <b style="color: blue;">Физра<br>спортивный комплекс, каб. 15</b>
+                                <b style="color: blue;">Физра(13.00-14.20)<br>спортивный комплекс, каб. 15</b>
                                 <span>
                                     <b class="homukInfo">Преподаватель:<br>Хомук О.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> 8 (017) 289 14 26<br>Email:<br>fvis@belstu.by</b>
                                     <img class="homuk" src="pic/homuk.png" />
@@ -339,7 +333,17 @@
 
                         </td>
                         <td class="subjects"><div></div></td>
-                        <td class="subjects"><div></div></td>
+                        <td class="subjects">
+                            <div  id="anglPz">
+                                <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                                <b style="color: blue;">Английский язык(13.00)<br>пз каб. 121-2 общ.</b>
+                                <span>
+                                    <b class="krivonosovaInfo">Старший преподаватель:<br>Кривоносова Е.В<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>-----------------<br>Email:<br>krivonosova<br>@belstu.by</b>
+                                    <img class="krivonosova" src="pic/krivonosova.jpg" />
+                                </span>
+                            </a>
+                            </div>
+                        </td>
                         <td class="subjects">
 
                             <div>
@@ -356,7 +360,7 @@
 
                         <td class="subjects" id="kyarLk">
                             <a style="color: yellow" href="#" class="tooltip blue-tooltip">
-                                <b style="color: blue;">КЯР<br>лк ауд. 200-3а</b>
+                                <b style="color: blue;">КЯР(14.40-16.00)<br>лк ауд. 200-3а</b>
                                 <span>
                                     <b class="barkovskiInfo">Ассистент:<br>Барковский Е.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> +375 29 858 55 20<br>Email:<br>barkovski@belstu.by</b>
                                     <img class="barkovski" src="pic/barkovski.jpg" />
@@ -373,9 +377,9 @@
             Об авторе
         </span>
         <div id="authorImage">
-            <img src=""/>
+            <img style="width: 400px; height: 400px;" src="pic/nikon.jpg"/>
         </div>
-        <span id="authorName">Имя фамилия</span>
+        <span id="authorName">Никон Чигоя</span>
         <!--При желании оставить здесь свои контакты-->
         <p id="bio">
             Заполнить информацией о себе любимом.

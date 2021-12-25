@@ -1,7 +1,9 @@
 .group1 {
             border: 5px solid red;
             width: 100%;
-            height: 730px;
+            height: 650px;
+            margin-top: 140px;
+            padding-bottom: -40px;
         
         }
         body {
@@ -54,7 +56,7 @@
         font-size:5px;
         z-index: 999; 
         opacity: 0.3; 
-        margin-top: 15px;
+        margin-top: 5px;
 
         }
         #clockHours, #clockMinutes, #clockSeconds {
