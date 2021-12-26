@@ -60,6 +60,7 @@ function vis() {
         i = -5;
         document.getElementById("main").className = "dp";
         alert("Спасибо за игру! Ждем вас снова.");
+        window.close();
       }
     }
     if (palka[i].x == 10) {
