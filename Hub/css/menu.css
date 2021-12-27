@@ -1,0 +1,55 @@
+
+/* Setting things up */
+
+
+.logo2 {
+    text-decoration: none;
+    width: 150px;
+    margin-top: 70px;
+
+}
+
+/* Important stuff */
+
+nav {
+    position: relative;
+    width: 90px;
+
+}
+
+.dropdown-toggle {
+    padding: .5em 1em;
+    background: #777;
+    border-radius: .2em .2em .2em .2em;
+    background-color: rgb(255,153,0);
+}
+
+ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: .75em;
+    background: #777;
+    min-width: 8em;
+    padding: 0;
+    border-radius: .2em .2em .2em .2em;
+    background-color: rgb(255,153,0);
+}
+
+li {
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.logo2 {
+    text-decoration: none;
+    padding: .5em 1em;
+    display: block;
+}
+li::marker {
+   color: white;
+   
+}
+

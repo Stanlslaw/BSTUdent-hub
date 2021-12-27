@@ -1,0 +1,43 @@
+
+/* Setting things up */
+
+
+.logo2 {
+    text-decoration: none;
+
+}
+
+/* Important stuff */
+
+nav {
+    position: relative;
+    width: 190px;
+}
+
+.dropdown-toggle {
+    padding: .5em 1em;
+    background: #777;
+    border-radius: .2em .2em 0 0;
+    width: 160px;
+}
+
+ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: .5em;
+    background: #777;
+    min-width: 12em;
+    padding: 0;
+    border-radius: 0 0 .2em .2em;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo2 {
+    text-decoration: none;
+    padding: .5em 1em;
+    display: block;
+}

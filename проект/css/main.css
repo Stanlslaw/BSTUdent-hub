@@ -1,0 +1,69 @@
+.group1 {
+            border: 5px solid red;
+            width: 100%;
+            height: 730px;
+        
+        }
+        body {
+            overflow: auto;
+            background-color: #000000;
+        }
+        .head {
+            width: 100%;
+            height: 25%;
+            border-bottom: 3px solid yellow;
+        }
+        .logo1 {
+            width: 150px;     
+            height: 150px;
+            float: left;
+            margin-left: 50px;
+            display: inline;
+
+        }
+        .logo2 {
+            width: 190px;
+            
+            float: right;
+            margin-right: 50px;
+            display: inline;
+            position: relative;
+
+        }
+        
+        .timetable {
+            border: 3px solid purple; 
+            height: 100%;
+            width: 100%;
+            color: rgba(0,0,255, 0.9);
+        }
+        .timetableDiv { 
+            margin: 5px 5px 5px 5px;
+            height: 73%;
+        }
+        #myCanvasDiv{
+        width: 160px;
+        height: 160px;
+        display: inline;
+        margin-left: 32%;
+
+        
+        }
+        #myCanvas {
+        font-family:Tahoma, sans-serif;
+        font-size:5px;
+        z-index: 999; 
+        opacity: 0.3; 
+        margin-top: 15px;
+
+        }
+        #clockHours, #clockMinutes, #clockSeconds {
+            width: 10px;
+            height: 15px;
+        }
+        .subjects:hover{
+            background-color: rgba(255,255,0, 0.9);
+        }
+        .subjects{
+            text-align: center;
+        }

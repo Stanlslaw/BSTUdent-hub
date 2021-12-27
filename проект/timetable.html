@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Timetable</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tooltip.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <script src="jQuery.js"></script>
+    <script src="js/clocks.js"></script>
+    <script src="js/digitalClocks.js"></script>
+    <script src="js/tracker.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        function firstweek() {
+            document.getElementById("mathOrScrChoice").innerHTML = '1.Матанализ<br>лк ауд.100-3а';
+            document.getElementById("alotsvmOrNothChoice").innerHTML = '1.АЛОЦВМ<br>пз каб.308-3';
+            document.getElementById("mathanalOrNothChoice").innerHTML = '1.Матанализ<br>пз каб.331-4';
+            document.getElementById("oapOrNothChoice").innerHTML = '1.ОАП<br>лр каб.200а-4';
+            document.getElementById("vovOrNothChoice").innerHTML = '1.История ВОВ<br>лк ауд.200-3а';
+            flag = true;
+            
+        }
+        function secondweek() {
+            document.getElementById("mathOrScrChoice").innerHTML = '2.СЯП<br>лк ауд.200-3а';
+            document.getElementById("alotsvmOrNothChoice").innerHTML = '2.---';
+            document.getElementById("mathanalOrNothChoice").innerHTML = '2.---';
+            document.getElementById("oapOrNothChoice").innerHTML = '2.---';
+            document.getElementById("vovOrNothChoice").innerHTML = '2.---';
+            flag = false;
+        }
+    </script> 
+
+   
+
+        
+        
+        
+</head>
+<body>
+    
+    <div class="group1">
+        <div class="head">
+            
+                <img  class="logo1" src="pic/logo.png">
+            
+            <div id="myCanvasDiv">
+                <canvas id="myCanvas" height='150' width='150'>
+                </canvas>
+            </div>
+            
+                <div class="logo2">
+                    
+                    <a class="dropdown-toggle" title="Menu">Выбор недели</a>
+                    <ul class="dropdown">
+                      <li onclick="firstweek()">Первая неделя</li>
+                      <li onclick="secondweek()">Вторая неделя</li>
+                    </ul>
+                    
+                </div>
+            
+        </div>
+        <div class="timetableDiv">
+            <table border=1 class="timetable">
+                <tr>
+                    <th align="center" colspan="7">
+                        
+                        <div>
+                            <span>Расписание занятий</span>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th><div><span id=clockHours></span>:<span id=clockMinutes></span>:<span id=clockSeconds></span></div></th>
+                    <th align="center"><div>Понедельник</div></th>
+                    <th align="center"><div>Вторник</div></th>
+                    <th align="center"><div>Среда</div></th>
+                    <th align="center"><div>Четверг</div></th>
+                    <th align="center"><div>Пятница</div></th>
+                    <th align="center"><div>Суббота</div></th>
+                </tr>
+                <tr>
+                    <th><div class="fixator"><b>14:40-16:00</b></div></th>
+                    <td class="subjects" id="mathOrScr">
+                        <div id="mathOrScrChoice">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Выберите неделю</b>
+                            <span>
+                                <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
+                                <img class="tchaikovski" src="pic/tchaikovski.jfif" />
+                            </span>
+                        </a>
+                        </div>
+                    </td>
+                    <td class="subjects" id="anglPz">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Английский язык<br>пз каб. 121-2 общ.</b>
+                            <span>
+                                <b class="krivonosovaInfo">Старший преподаватель:<br>Кривоносова Е.В<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>-----------------<br>Email:<br>krivonosova<br>@belstu.by</b>
+                                <img class="krivonosova" src="pic/krivonosova.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="alotsvmLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">АЛОЦВМ<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="grinyukInfo">Доцент:<br>Гринюк Д.А<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>-----------------<br>OK.RU:<br>Дмитрий<br>Анатольевич</b>
+                                <img class="grinyuk" src="pic/grinyuk.jfif" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="scrLr">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Скриптовые языки программирования<br>л-р каб. 413-1</b>
+                            <span>
+                                <b class="kantarovichInfo">Ассистент:<br>Кантарович В.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>+375-17 321-23-28<br>Email:<br>-----------<br>---------</b>
+                                <img class="kantarovich" src="pic/kantarovich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="oapLr">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">ОАП<br>л-р каб. 200а-4</b>
+                            <span>
+                                <b class="chistyakovaInfo">Преподаватель-стажёр:<br>Чистякова Ю.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>+375-17-327-43-76<br>Email:<br>-----------<br>---------</b>
+                                <img class="chistyakova" src="pic/chistyakova.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="alotsvmPz">
+                        <div id="alotsvmOrNothChoice">
+                            <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Выберите неделю</b>
+                            <span>
+                                <b class="grinyukInfo">Доцент:<br>Гринюк Д.А<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>-----------------<br>OK.RU:<br>Дмитрий<br>Анатольевич</b>
+                                <img class="grinyuk" src="pic/grinyuk.jfif" />
+                            </span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><div class="fixator"><b>16:30-17:50</b></div></th>
+                    <td class="subjects" id="trpoLr">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Технология разработки ПО<br>л-р каб. 206-1</b>
+                            <span>
+                                <b class="narkevichInfo">Старший преподаватель:<br>Наркевич А.C<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>+375 17 327-43-76<br>Email:<br>narkevich.<br>adelina@gmail.com</b>
+                                <img class="narkevich" src="pic/narkevich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="oapLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">ОАП<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="belodedInfo">Доцент:<br>Белодед Н.И<br>Итоговая форма<br>контроля<br>знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>beloded@yandex.ru</b>
+                                <img class="beloded" src="pic/beloded.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="pe">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Физра<br>спортивный комплекс, каб. 15</b>
+                            <span>
+                                <b class="homukInfo">Преподаватель:<br>Хомук О.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> 8 (017) 289 14 26<br>Email:<br>fvis@belstu.by</b>
+                                <img class="homuk" src="pic/homuk.png" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="poLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Технология разработки ПО<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="narkevichInfo">Старший преподаватель:<br>Наркевич А.C<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>+375 17 327-43-76<br>Email:<br>narkevich.<br>adelina@gmail.com</b>
+                                <img class="narkevich" src="pic/narkevich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="linPz">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Линейная алгебра<br>пз каб. 358-4</b>
+                            <span>
+                                <b class="kapuraInfo">Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by</b>
+                                <img class="kapura" src="pic/kapura.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="mathanalLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Матанализ<br>лк ауд. 100-3а</b>
+                            <span>
+                                <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
+                                <img class="tchaikovski" src="pic/tchaikovski.jfif" />
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><div class="fixator"><b>18:05-19:25</b></div></th>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects" id="mathanalPz">
+                        <a style="color: yellow;" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Матанализ<br>пз каб. 331-4</b>
+                            <span>
+                                <b class="kapuraInfo">Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by</b>
+                                <img class="kapura" src="pic/kapura.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="mathanalLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Матанализ<br>лк ауд. 100-3а</b>
+                            <span>
+                                <b class="tchaikovskiInfo">Доцент:<br>Чайковский М.В<br>Итоговая форма контроля знаний: экзамен<br>Телефон:<br>----------------<br>Email:<br>tchaikovski<br>@belstu.by</b>
+                                <img class="tchaikovski" src="pic/tchaikovski.jfif" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="kyarLr">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">КЯР<br>л-р каб. 308-1</b>
+                            <span>
+                                <b class="ulasevichInfo">Преподаватель-стажер:<br>Уласевич Н.И<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>+375299741494<br>Email:<br>koliaulasevich<br>@gmail.com</b>
+                                <img class="ulasevich" src="pic/ulasevich.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                    <td class="subjects" id="mathanalPz"><div id="mathanalOrNothChoice">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Выберите неделю</b>
+                            <span>
+                                <b class="kapuraInfo">Преподаватель-стажёр:<br>Капура М.С<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>kapura<br>@belstu.by</b>
+                                <img class="kapura" src="pic/kapura.jpg" />
+                            </span>
+                            </a>
+                    </div></td>
+                    <td class="subjects">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Физра<br>спортивный комплекс, каб. 15</b>
+                            <span>
+                                <b class="homukInfo">Преподаватель:<br>Хомук О.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> 8 (017) 289 14 26<br>Email:<br>fvis@belstu.by</b>
+                                <img class="homuk" src="pic/homuk.png" />
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><div class="fixator"><b>19:40-21:00</b></div></th>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects">
+                     
+                            <div id="oapOrNothChoice">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Выберите неделю</b>
+                            <span>
+                                <b class="chistyakovaInfo">Преподаватель-стажёр:<br>Чистякова Ю.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----</b>
+                                <img class="chistyakova" src="pic/chistyakova.jpg" />
+                            </span>
+                        </a>
+                        </div>
+                       
+                    </td>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects"><div></div></td>
+                    <td class="subjects">
+                        
+                            <div id="vovOrNothChoice">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">Выберите неделю</b>
+                            <span>
+                                <b class="andoraloInfo">Доцент:<br>Андорало И.А<br>Итоговая форма контроля знаний: зачёт<br>Телефон:<br>----------------<br>Email:<br>--------------<br>----</b>
+                                <img class="andoralo" src="pic/andoralo.jpg" />
+                            </span>
+                        </a>
+                        </div>
+                    
+                    </td>
+
+                    <td class="subjects" id="kyarLk">
+                        <a style="color: yellow" href="#" class="tooltip blue-tooltip">
+                            <b style="color: blue;">КЯР<br>лк ауд. 200-3а</b>
+                            <span>
+                                <b class="barkovskiInfo">Ассистент:<br>Барковский Е.В<br>Итоговая форма<br>контроля<br>знаний: зачёт<br>Телефон:<br> +375 29 858 55 20<br>Email:<br>barkovski@belstu.by</b>
+                                <img class="barkovski" src="pic/barkovski.jpg" />
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

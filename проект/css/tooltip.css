@@ -1,0 +1,100 @@
+.main {
+    margin: 200px 50px 0 50px;
+}
+
+.tooltip {
+    position: relative;
+    background: #eaeaea;
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+
+
+}
+
+    .tooltip span {
+        visibility: hidden;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        z-index: 999;
+        width: 230px;
+        margin-left: -127px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        opacity: 0.9;
+        background-color: #ddd;
+        background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+        text-shadow: 0 1px 0 rgba(255,255,255,.4);
+    }
+    .tooltip span .tchaikovski {
+        margin-right: 50px;
+    }
+
+ 
+
+        .tooltip:hover span {
+            visibility: visible;
+        }
+
+    .tooltip span:before,
+    .tooltip span:after {
+        content: "";
+        position: absolute;
+        z-index: 1000;
+        bottom: 196px;
+        left: 50%;
+        margin-left: -5px;
+        border-top: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #ddd;
+
+    }
+    
+    .tooltip span:before {
+        border-top-color: #ccc;
+        bottom: 9px;
+    }
+    .sider {
+        margin-right: 150px;
+    }
+.blue-tooltip span {
+
+    border-color: #59add4;
+    background-color: #61bde7;
+}
+
+    .blue-tooltip span:after {
+        border-bottom-color: #61bde7;
+
+    }
+
+    .blue-tooltip span:before {
+        border-bottom-color: #59add4;
+        display: none;
+    }
+    .narkevich, .beloded, .homuk, .kapura, .tchaikovski, .krivonosova, .grinyuk, .kantarovich, .chistyakova, .ulasevich, .barkovski, .andoralo {
+        width:  85px;
+        height: 100px;
+        float: right;
+
+    }
+
+        .narkevichInfo, .belodedInfo, .homukInfo, .kapuraInfo, .tchaikovskiInfo, .krivonosovaInfo, .grinyukInfo, .kantarovichInfo, .chistyakovaInfo, 
+        .ulasevichInfo, .barkovskiInfo, .andoraloInfo {
+            text-align: left;
+            color: black;
+        }
+b {
+    display: block;
+    margin-bottom: -90px;
+    font-weight: normal;
+
+}
+
+.fixator {
+    margin-top: -9%;
+}
