@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary</title>
+    <link rel="favicon" href="logo.png" />
+    <!--css/hub НЕ ИЗМЕНЯТЬ!!!-->
+    <link rel="stylesheet" href="css/hub.css" />
+    <!--Таблицы стилей модуля(используется для всех модулей, при необходимости добавить свои стили отдельным файлом)-->
+    <link rel="stylesheet" href="css/module.css" />
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="css/Binary.css" />
+  </head>
+  <body>
+    <header id="hubHead">
+      <span id="logo"><a href="index.html">BSTUdent Hub</a></span>
+      <nav id="headNav">
+        <a href="#top">
+          <div class="navButton">
+            <span class="navText"> Главная </span>
+          </div>
+        </a>
+        <a href="#workspace">
+          <div class="navButton">
+            <span class="navText"> Бинарные операции </span>
+          </div>
+        </a>
+        <a href="#about">
+          <div class="navButton">
+            <span class="navText"> Об авторе </span>
+          </div>
+        </a>
+      </nav>
+    </header>
+    <div id="intro">
+      <span id="greetings"> Добро пожаловать на платформу имени Дмитрия Анатольевича по работе с двоичным кодом </span>
+      <span id="introInfo"> Выберите операцию, которую вы хотите совершить </span>
+      <a href="#workspace">
+        <img id="expandArrow" src="src/arrowDown.png" />
+      </a>
+    </div>
+    <article name="workspace" id="workspace" class="workspace">
+      <div class= "binary-workspace">
+    <div>
+      <form>
+      <select name="choise" id="choise">
+       <option value="in">Перевод в двоичный код</option>
+        <option value="out">Перевод из двоичного кода</option>
+        <option value="plus">Сложение двоичного кода</option>
+        <option value="minus">Вычитание в двоичном коде</option>
+        <option value="multiply">Умножение в двоичном коде</option>
+        <option value="division">Деление в двоичном коде</option>
+      </select>
+    </div>
+    <p id="alarm">Для перевода в двоичный код введите число в десятичной системе в строку для ввода и нажмите кнопку "вычислить".
+       Мы сможем рассчитать перевод как положительного, так и отрицательного числа, но мы не работаем с дробными числами. Максимальное число для вычислений - 
+       "4294967295", минимальное - "-4294967295"</p>
+      <div class ="texts">
+        <input type="text" name="firsttext" id="firsttext" class="text" maxlength="16" placeholder="Первое текстовое поле">
+        <input type="text" name="secondtext" id="secondtext" class="text" maxlength="16" placeholder="Второе текстовое поле">
+    </div>
+    </form>
+    <div class ="but">
+    <button id="but" class="submit">Вычислить</button>
+    </div>
+    <div class="ansdiv">
+      <p id="answer"></p>
+    </div>
+    </div>
+    </article>
+    <div id="about">
+      <span id="aboutHead"> Об авторе </span>
+      <div id="authorImage">
+        <img class = "fedosdekudrille" src="src/Fedosdekudrille.jpg" />
+      </div>
+      <span id="authorName">Фёдор Кудрицкий</span>
+      <!--При желании оставить здесь свои контакты-->
+      <p id="bio">
+        Сравнительно недавно начавший обучение разработчик, который быстро
+        получает новые навыки. На данный момент углубленно изучает C++,
+        JavaScript, HTML. Отдаёт предпочтение созданию сайтов, frontend
+        разработке. Спортивный, умный и просто хороший человек. Хорошо справится
+        как с работой в команде, так и с одиночными заданиями.
+      </p>
+    </div>
+    <footer id="hubFooter">
+      <a href="">
+        <div class="footNav">
+          <span class="navText"> Документация проекта </span>
+        </div>
+      </a>
+      <a href="https://github.com/Stanlslaw/BSTUdent-hub">
+        <div class="footNav">
+          <span class="navText"> GitHub </span>
+        </div>
+      </a>
+      <a href="https://www.belstu.by/">
+        <div class="footNav">
+          <span class="navText"> БГТУ </span>
+        </div>
+      </a>
+    </footer>
+    <script src="js/BinaryCalculations.js"></script>
+    <!--js/hub НЕ ИЗМЕНЯТЬ, свои скрипты подключать-->
+    <script src="js/jQuery/jquery-3.6.0.js"></script>
+    <script src="js/jQuery/jquery-ui-1.13.0/jquery-ui.js"></script>
+    <script src="js/hub.js"></script>
+  </body>
+</html>

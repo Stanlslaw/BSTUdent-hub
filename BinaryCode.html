@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Модуль</title>
+  </head>
+  <body>
+    <h1>Добро пожаловать на бесплатную платформу имени <span>Дмитрия Анатольевича</span> по работе с двоичным кодом</h1>
+    <h5>Выберите операцию, которую вы хотите совершить</h5>
+    <div>
+      <form>
+      <select name="choise" id="choise">
+       <option value="in">Перевод в двоичный код</option>
+        <option value="out">Перевод из двоичного кода</option>
+        <option value="plus">Сложение двоичного кода</option>
+        <option value="minus">Вычитание в двоичном коде</option>
+        <option value="multiply">Умножение в двоичном коде</option>
+        <option value="division">Деление в двоичном коде</option>
+      </select>
+    </div>
+      <div>
+        <input type="text" name="firsttext" id="firsttext">
+        <input type="text" name="secondtext" id="secondtext">
+    </div>
+    </form>
+    <button id="but">Вычислить</button>
+    <div>
+      <p id="answer">Поле для ответа</p>
+    </div>
+    <script src="BinaryCalculations.js"></script>
+  </body>
+</html>
